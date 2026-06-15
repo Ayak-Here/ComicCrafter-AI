@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -15,6 +16,11 @@ from models.comic_page_request import ComicPageRequest
 app = FastAPI(
     title="ComicCrafter API",
     version="1.0.0"
+)
+
+os.makedirs(
+    "generated",
+    exist_ok=True
 )
 
 app.mount(
