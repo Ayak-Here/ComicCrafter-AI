@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL!;
+  "https://comiccrafter-ai.onrender.com";
 
 export async function generateStory(
   prompt: string,
