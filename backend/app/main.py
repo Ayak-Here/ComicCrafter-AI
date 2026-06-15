@@ -135,8 +135,13 @@ def generate_comic(request: StoryRequest):
         comic_request
     )
 
+    BASE_URL = os.getenv(
+        "BASE_URL",
+        "http://127.0.0.1:8000"
+    )
+
     return {
         "title": comic.title,
         "comic_url":
-            f"http://127.0.0.1:8000/{comic_path}"
+            f"{BASE_URL}/{comic_path}"
     }
