@@ -32,8 +32,9 @@ app.mount(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000"
+        "http://localhost:3000",
         "https://comic-crafter-eight.vercel.app",
+        "https://comic-crafter.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
