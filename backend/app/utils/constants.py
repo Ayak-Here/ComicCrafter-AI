@@ -1,0 +1,1 @@
+HF_IMAGE_MODEL = "black-forest-labs/FLUX.1-schnell"
