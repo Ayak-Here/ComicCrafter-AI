@@ -7,13 +7,15 @@ __pycache__/
 *.pyc
 
 # Generated images
-generated/
 backend/app/generated/
 backend/app/*.png
 
 # Next.js
 frontend/node_modules/
 frontend/.next/
+
+# VS Code
+.vscode/
 
 # OS
 .DS_Store
