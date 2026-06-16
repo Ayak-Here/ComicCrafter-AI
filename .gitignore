@@ -20,3 +20,5 @@ frontend/.next/
 # OS
 .DS_Store
 Thumbs.db
+# Next.js required file
+!frontend/next-env.d.ts
