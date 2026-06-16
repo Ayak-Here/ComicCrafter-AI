@@ -1,76 +1,177 @@
-# 🎭 ComicCrafter AI
+# ComicCrafter AI
 
-ComicCrafter AI is an AI-powered comic generator that creates **short comic-style stories** with AI-generated images. The app runs **locally on edge devices** and uses **OpenAI's GPT-4o** for story generation and **Stability AI** for image generation.
+Transform simple text prompts into complete AI-generated comic pages.
 
-## 🚀 Features
+ComicCrafter AI combines Large Language Models and AI image generation to automatically create comic stories, generate panel illustrations, and assemble them into a finished comic page.
 
-- **AI Story Generation**: Uses OpenAI's GPT-4o to generate a four-panel story.
-- **AI Image Generation**: Uses Stability AI to generate matching images.
-- **Seamless UI**: Built with Streamlit for an easy-to-use interface.
-- **Edge Deployment**: Optimized for running on local devices.
+## Live Demo
 
-## 🛠️ Tech Stack
+Frontend: https://comic-crafter-ai.vercel.app
 
-- **Frontend**: Streamlit
-- **Backend**: Python
-- **LLM**: OpenAI GPT-4o
-- **Image Generation**: Stability AI API
-- **Environment Management**: Dotenv
+Backend API: https://comiccrafter-ai.onrender.com
 
-## 📦 Installation
+---
 
-1. **Clone the Repository**
+## Features
 
-   ```sh
-   git clone https://github.com/your-username/ComicCrafterAI.git
-   cd ComicCrafterAI
-   ```
+* AI Story Generation using Groq LLM
+* Automatic Comic Panel Creation
+* AI Image Generation using Hugging Face
+* Comic Page Assembly using Pillow
+* Multiple Comic Styles
 
-2. **Create a Virtual Environment (Optional but Recommended)**
+  * Comic
+  * Manga
+  * Webtoon
+* FastAPI REST Backend
+* Next.js Frontend
+* Responsive Modern UI
 
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
-   ```
+---
 
-3. **Install Dependencies**
+## Tech Stack
 
-   ```sh
-   pip install -r requirements.txt
-   ```
+### Backend
 
-4. **Set Up Environment Variables**
-   Create a `.env` file in the project root and add:
+* FastAPI
+* Python
+* Groq API
+* Hugging Face Inference API
+* Pillow
 
-   ```sh
-   OPENAI_API_KEY=your-openai-api-key
-   STABILITY_API_KEY=your-stability-ai-key
-   ```
+### Frontend
 
-## 🎮 Usage
+* Next.js 16
+* TypeScript
+* Tailwind CSS
 
-Run the Streamlit app:
+### Deployment
 
-```sh
-streamlit run app.py
+* Render (Backend)
+* Vercel (Frontend)
+
+---
+
+## Project Architecture
+
+User Prompt
+
+↓
+
+Groq Story Generation
+
+↓
+
+Panel Descriptions
+
+↓
+
+Hugging Face Image Generation
+
+↓
+
+Comic Builder
+
+↓
+
+Final Comic Page
+
+---
+
+## Project Structure
+
+```text
+ComicCrafter-AI
+│
+├── backend
+│   ├── app
+│   │   ├── models
+│   │   ├── services
+│   │   │   ├── image
+│   │   │   └── llm
+│   │   ├── utils
+│   │   └── main.py
+│   │
+│   ├── tests
+│   └── requirements.txt
+│
+├── frontend
+│   ├── app
+│   ├── lib
+│   ├── public
+│   └── package.json
+│
+├── README.md
+└── .gitignore
 ```
 
-Then open the browser at `http://localhost:8501/` to interact with the app.
+---
 
-## 📝 Roadmap
+## Local Setup
 
-- ✅ Basic story and image generation
-- ⏳ Multi-panel comic book mode
-- ⏳ Local model deployment for offline use
-- ⏳ Custom styling for comic panels
+### Backend
 
-## 🤝 Contributing
+```bash
+cd backend/app
 
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature-name`)
-5. Open a Pull Request
+python -m venv venv
 
-.
+venv\Scripts\activate
 
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+Backend URL:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend URL:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+
+HF_TOKEN=your_huggingface_token
+
+BASE_URL=http://127.0.0.1:8000
+```
+
+---
+
+## Future Improvements
+
+* Character consistency across panels
+* Multiple comic layouts
+* User authentication
+* Comic history
+* PDF export
+* Story editing before generation
+
+---
+
+## Author
+
+Ayak Manna
